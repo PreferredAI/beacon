@@ -16,7 +16,7 @@
      + The format of the prediction file is as follows: 
        Target:gt_basket|item_candidate_1:score_1|item_candidate_2:score_2|
 
-3. If you find the code and data useful in your research, please cite:
+3. If you find the code useful in your research, please cite:
 
 ```
 @inproceedings{le2019beacon,
