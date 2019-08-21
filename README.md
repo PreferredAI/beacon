@@ -1,4 +1,4 @@
-## The implementation of Beacon in the "Correlation-Sensitive Next-Basket Recommendation" paper (IJCAI'19)
+## The implementation of Beacon in the "[Correlation-Sensitive Next-Basket Recommendation](https://www.ijcai.org/proceedings/2019/0389.pdf)" paper (IJCAI'19)
 
 
 1. Input format(s): Train/Validate/Test sets have the same format
@@ -15,5 +15,22 @@
      + Support 3 modes: train_mode, prediction_mode, tune_mode
      + The format of the prediction file is as follows: 
        Target:gt_basket|item_candidate_1:score_1|item_candidate_2:score_2|
+
+3. If you find the code and data useful in your research, please cite:
+
+```
+@inproceedings{le2019beacon,
+  title={Correlation-Sensitive Next-Basket Recommendation},
+  author={Le, Duc-Trong, Lauw, Hady W and Fang, Yuan},
+  booktitle={Proceedings of the International Joint Conference on Artificial Intelligence},
+  year={2019},
+}
+```
+
+## Requirements
+
+- Python == 3.6
+- Tensorflow == 1.14
+- scipy.sparse == 1.3.0
 
 @Please drop me an email (ductrong.le.2014 at smu.edu.sg) if you need any clarification. Thanks :+1:
