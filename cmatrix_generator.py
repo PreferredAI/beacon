@@ -4,8 +4,7 @@ import utils
 
 # Model hyper-parameters
 tf.flags.DEFINE_string("data_dir", None, "The input data directory (default: None)")
-tf.flags.DEFINE_integer("nbwalk", 1, "The number of random walks on real adjacency matrix (default:1)")
-tf.flags.DEFINE_boolean("load_mode", False, "Turn on/off the loading mode (default: False)")
+tf.flags.DEFINE_integer("nb_hop", 1, "The order of the real adjacency matrix (default:1)")
 
 config = tf.flags.FLAGS
 print("---------------------------------------------------")
@@ -49,7 +48,7 @@ NB_ITEMS = len(item_dict)
 print(" + Maximum sequence length: ", MAX_SEQ_LENGTH)
 print(" + Total items: ", NB_ITEMS)
 
-rmatrix_fpath = output_dir + "/r_matrix_" + str(config.nbwalk) + "w.npz"
+rmatrix_fpath = output_dir + "/r_matrix_" + str(config.nb_hop) + "w.npz"
 
 print("@Build the real adjacency matrix")
 real_adj_matrix = utils.build_sparse_adjacency_matrix_v2(training_instances, validate_instances, item_dict)
@@ -59,7 +58,7 @@ mul = real_adj_matrix
 with tf.device('/cpu:0'):
     w_mul = real_adj_matrix
     coeff = 1.0
-    for w in range(1, config.nbwalk):
+    for w in range(1, config.nb_hop):
         coeff *= 0.85
         w_mul *= real_adj_matrix
         w_mul = utils.remove_diag(w_mul)
