@@ -3,11 +3,9 @@
 
 1. Input format(s): Train/Validate/Test sets have the same format
 
- - For each basket sequence, baskets {b_i} are separated by '|'
-   e.g., b_1|b_2|b_3|...|b_n
+ - For each basket sequence, baskets {b_i} are separated by '|', e.g., b_1|b_2|b_3|...|b_n
 
- - For each basket b_i, items {v_j} are separated by a space ' '
-   e.g., v_1 v_2 v_3 ... v_m
+ - For each basket b_i, items {v_j} are separated by a space ' ', e.g., v_1 v_2 v_3 ... v_m
 
 2. How to train:
  - Step 1: Generate pre-computed correlation matrix C using cmatrix_generator.py. 
