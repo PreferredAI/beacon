@@ -95,6 +95,14 @@ def build_sparse_adjacency_matrix_v2(training_instances, validate_instances, ite
 
     return create_sparse_matrix(pairs, NB_ITEMS)
 
+def add_tuple(t, pairs):
+    assert len(t) == 2
+    if t[0] != t[1]:
+        if t not in pairs:
+            pairs[t] = 1
+        else:
+            pairs[t] += 1
+
 def create_sparse_matrix(pairs, NB_ITEMS):
     row = [p[0] for p in pairs]
     col = [p[1] for p in pairs]
