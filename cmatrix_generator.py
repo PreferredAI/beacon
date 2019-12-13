@@ -41,7 +41,7 @@ print(" + Total validating sequences: ", nb_validate)
 
 # Create dictionary
 print("@Build knowledge")
-MAX_SEQ_LENGTH, item_dict, reversed_item_dict = utils.build_knowledge(training_instances, validate_instances)
+MAX_SEQ_LENGTH, item_dict, reversed_item_dict, _ = utils.build_knowledge(training_instances, validate_instances)
 
 print("#Statistic")
 NB_ITEMS = len(item_dict)
