@@ -29,7 +29,7 @@ def build_knowledge(training_instances, validate_instances):
         elements = line.split("|")
 
         if len(elements) - 1 > MAX_SEQ_LENGTH:
-            MAX_SEQ_LENGTH = len(basket_seq) - 1
+            MAX_SEQ_LENGTH = len(elements) - 1
 
         label = int(elements[0])
         if label != 1 and len(elements) == 3:
